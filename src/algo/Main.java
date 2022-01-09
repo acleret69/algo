@@ -4,24 +4,20 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        final int MAXBOUND = 10000;
-        List<Integer> array = new ArrayList<Integer>();
-        Random rand = new Random();
-        for (int i = 0; i < MAXBOUND; i++) {
-            array.add(rand.nextInt(MAXBOUND));
-        }
         BinarySearchTree binarySearchTree = new BinarySearchTree();
-        binarySearchTree.listToTree(array);
+        binarySearchTree.insert(new BinarySearchNode(20));
+        binarySearchTree.insert(new BinarySearchNode(5));
+        binarySearchTree.insert(new BinarySearchNode(25));
+        binarySearchTree.insert(new BinarySearchNode(3));
+        binarySearchTree.insert(new BinarySearchNode(12));
+        binarySearchTree.insert(new BinarySearchNode(21));
+        binarySearchTree.insert(new BinarySearchNode(28));
+        binarySearchTree.insert(new BinarySearchNode(8));
+        binarySearchTree.insert(new BinarySearchNode(13));
+        binarySearchTree.insert(new BinarySearchNode(6));
 
-        long startBinarySearchTree = System.nanoTime();
-        binarySearchTree.infixDepthCourse(binarySearchTree.getRoot());
-        long timeElapsedBinarySearchTree = System.nanoTime() - startBinarySearchTree;
-
-        long start = System.nanoTime();
-        Collections.sort(array);
-        long timeElapsed = System.nanoTime() - start;
-
-        System.out.println("Temps pour trier un arbre binaire de recherche: \t \t" + timeElapsedBinarySearchTree);
-        System.out.println("Temps pour trier un tableau avec Collections.sort(): \t" + timeElapsed);
+        System.out.println("Hauteur de la racine de l'arbre binaire de recherche: " + BinarySearchNode.getHeight(binarySearchTree.getRoot()));
+        System.out.println("Facteur d'equilibrage de la racine de l'arbre binaire de recherche: " + BinarySearchNode.balanceFactor(binarySearchTree.getRoot()));
+        System.out.println("Cet arbre est un arbre equilibre ? " + binarySearchTree.isBalanceTree());
     }
 }
