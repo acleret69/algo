@@ -14,19 +14,16 @@ public class Main {
         binarySearchTree.insert(new BinarySearchNode(8));
         binarySearchTree.insert(new BinarySearchNode(13));
         binarySearchTree.insert(new BinarySearchNode(6));
-
-        System.out.println("Arbre binaire de recherche initial");
+        System.out.println("Arbre : ");
         BinarySearchTree.print(binarySearchTree.getRoot(), "-");
 
         binarySearchTree.insert(new BinarySearchNode(50));
         binarySearchTree.insert(new BinarySearchNode(5));
         binarySearchTree.insert(new BinarySearchNode(25));
         binarySearchTree.insert(new BinarySearchNode(19));
-
-
-        System.out.println("\nArbre binaire de recherche après insertion");
+        System.out.println("\nArbre après insertion");
         BinarySearchTree.print(binarySearchTree.getRoot(), "-");
-
+        
         System.out.println("Parcours en profondeur infixe: \t" + binarySearchTree.infixDepthCourse(binarySearchTree.getRoot()));
     }
 }
